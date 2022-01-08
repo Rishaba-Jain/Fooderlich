@@ -1,3 +1,5 @@
+part of 'explore_recipe.dart';
+
 class Ingredients {
   String imageUrl;
   String title;

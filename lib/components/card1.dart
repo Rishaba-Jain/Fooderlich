@@ -1,8 +1,14 @@
 import 'package:flutter/material.dart';
 import '../fooderlich_theme.dart';
+import '../models/models.dart';
 
 class Card1 extends StatelessWidget {
-  const Card1({Key? key}) : super(key: key);
+  final ExploreRecipe recipe;
+
+  const Card1({
+    Key? key,
+    required this.recipe,
+  }) : super(key: key);
 
   final String category = 'Editor\'s Choice';
   final String title = 'The Art of Phulka';
@@ -11,32 +17,33 @@ class Card1 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    print('card1');
     return Center(
       child: Container(
         child: Stack(
           children: [
             Text(
-              category,
+              recipe.subtitle,
               style: FooderlichTheme.darkTextTheme.bodyText1,
             ),
             Positioned(
               child: Text(
-                title,
+                recipe.title,
                 style: FooderlichTheme.darkTextTheme.headline5,
               ),
               top: 20,
             ),
             Positioned(
               child: Text(
-                description,
+                recipe.message,
                 style: FooderlichTheme.darkTextTheme.bodyText1,
               ),
-              bottom:30,
+              bottom: 30,
               right: 0,
             ),
             Positioned(
               child: Text(
-                chef,
+                recipe.authorName,
                 style: FooderlichTheme.darkTextTheme.bodyText1,
               ),
               bottom: 10,
@@ -49,12 +56,12 @@ class Card1 extends StatelessWidget {
           width: 350,
           height: 450,
         ),
-        decoration: const BoxDecoration(
+        decoration: BoxDecoration(
           image: DecorationImage(
-            image: AssetImage('assets/phulka1.jpg'),
+            image: AssetImage(recipe.backgroundImage),
             fit: BoxFit.cover,
           ),
-          borderRadius: BorderRadius.all(Radius.circular(10.0)),
+          borderRadius: const BorderRadius.all(Radius.circular(10.0)),
         ),
       ),
     );

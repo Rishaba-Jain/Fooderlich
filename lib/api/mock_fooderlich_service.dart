@@ -1,10 +1,10 @@
+
 import 'dart:convert';
 import 'package:flutter/services.dart';
 import '../models/models.dart';
 
 // Mock recipe service that grabs sample json data to mock recipe request/response
 class MockFooderlichService {
-
   // Batch request that gets both today recipes and friend's feed
   Future<ExploreData> getExploreData() async {
     final todayRecipes = await _getTodayRecipes();
@@ -18,15 +18,22 @@ class MockFooderlichService {
     //Simulate api request wait time
     await Future.delayed(const Duration(milliseconds: 1000));
     // Load json from file system
-    final dataString = await _loadAsset('assets/sample_data/sample_explore_recipes.json');
+    final dataString =
+        await _loadAsset('assets/sample_data/sample_explore_recipes.json');
     // Decode to json
     final Map<String, dynamic> json = jsonDecode(dataString);
 
     //Go through each recipe and convert json to ExploreRecipe object
-    if(json['recipes'] != null) {
+    if (json['recipes'] != null) {
       final recipes = <ExploreRecipe>[];
+      print('json recipes is not null');
       json['recipes'].forEach((v) {
+        print(v);
+        print('1111111111111111');
+        print(ExploreRecipe.fromJson(v).toString());
         recipes.add(ExploreRecipe.fromJson(v));
+        print('mockservice _getTodayRecipes recipes.isempty');
+        print(recipes.isEmpty);
       });
       return recipes;
     } else {
@@ -39,7 +46,8 @@ class MockFooderlichService {
     // Simulate api request wait time
     await Future.delayed(const Duration(milliseconds: 1000));
     // Load json from file system
-    final dataString = await _loadAsset('assets/sample_data/sample_friends_feed.json');
+    final dataString =
+        await _loadAsset('assets/sample_data/sample_friends_feed.json');
     // Decode to json
     final Map<String, dynamic> json = jsonDecode(dataString);
 
@@ -53,7 +61,6 @@ class MockFooderlichService {
     } else {
       return [];
     }
-    
   }
 
   // Get the sample recipe json to display in ui
@@ -61,12 +68,13 @@ class MockFooderlichService {
     // Simulate api request wait time
     await Future.delayed(const Duration(milliseconds: 1000));
     // Load json from file system
-    final dataString = await _loadAsset('assets/sample_data/sample_recipes.json');
+    final dataString =
+        await _loadAsset('assets/sample_data/sample_recipes.json');
     // Decode to json
     final Map<String, dynamic> json = jsonDecode(dataString);
 
     // Go through each recipe and convert json to SimpleRecipe object.
-    if(json['recipes'] != null) {
+    if (json['recipes'] != null) {
       final recipes = <SimpleRecipe>[];
       json['recipes'].forEach((v) {
         recipes.add(SimpleRecipe.fromJson(v));

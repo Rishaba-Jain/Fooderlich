@@ -1,3 +1,5 @@
+part of 'explore_recipe.dart';
+
 class Instruction {
   String imageUrl;
   String description;

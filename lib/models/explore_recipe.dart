@@ -1,5 +1,5 @@
-import 'ingredient.dart';
-import 'instruction.dart';
+part 'ingredient.dart';
+part 'instruction.dart';
 
 class RecipeCardType {
   static const card1 = 'card1';
@@ -64,7 +64,10 @@ class ExploreRecipe {
       });
     }
 
-    return ExploreRecipe(      
+    print('ExploreRecipe fromJson id ----- ' + json['id']);
+    print('ExploreRecipe fromJson cardType ----- ' + json['cardType']);
+
+    return ExploreRecipe(
       id: json['id'] ?? '' ,
       cardType: json['cardType'] ?? '' ,
       title: json['title'] ?? '' ,
