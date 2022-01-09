@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'fooderlich_theme.dart';
 import 'home.dart';
@@ -16,6 +18,9 @@ class Fooderlich extends StatelessWidget {
       theme: theme,
       title: 'Fooderlich',
       home: const Home(),
+      scrollBehavior: const MaterialScrollBehavior().copyWith(
+        dragDevices: {PointerDeviceKind.mouse},
+      ),
     );
   }
 }

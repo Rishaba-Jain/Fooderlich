@@ -64,9 +64,6 @@ class ExploreRecipe {
       });
     }
 
-    print('ExploreRecipe fromJson id ----- ' + json['id']);
-    print('ExploreRecipe fromJson cardType ----- ' + json['cardType']);
-
     return ExploreRecipe(
       id: json['id'] ?? '' ,
       cardType: json['cardType'] ?? '' ,
@@ -78,10 +75,10 @@ class ExploreRecipe {
       authorName: json['authorName'] ?? '' ,
       role: json['role'] ?? '' ,
       profileImage: json['profileImage'] ?? '' ,
-      durationInMinutes: json['durationInMinutes'] ?? '' ,
+      durationInMinutes: json['durationInMinutes'] ?? 0 ,
       dietType: json['dietType'] ?? '' ,
-      calories: json['calories'] ?? '' ,
-      tags: json['tags'] ?? '' ,
+      calories: json['calories'] ?? 0 ,
+      tags: json['tags'].cast<String>() ?? [] ,
       description: json['description'] ?? '' ,
       source: json['source'] ?? '' ,
       ingredients: ingredients,

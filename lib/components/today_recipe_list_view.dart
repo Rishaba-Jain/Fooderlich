@@ -13,7 +13,6 @@ class TodayRecipeListView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    print('TodayRecipeListView build');
     return Padding(
       padding: const EdgeInsets.only(
         left: 16,
@@ -35,12 +34,10 @@ class TodayRecipeListView extends StatelessWidget {
               scrollDirection: Axis.horizontal,
               itemCount: recipes.length,
               itemBuilder: (context, index) {
-                print('TodayRecipeListView build itemBuilder');
                 final recipe = recipes[index];
                 return buildCard(recipe);
               },
               separatorBuilder: (context, index) {
-                print('TodayRecipeListView build seperatorbuilder');
                 return const SizedBox(width: 16);
               },
             ),
@@ -51,7 +48,6 @@ class TodayRecipeListView extends StatelessWidget {
   }
 
   Widget buildCard(ExploreRecipe recipe) {
-    print('TodayRecipeListView buildCard');
     if (recipe.cardType == RecipeCardType.card1) {
       return Card1(recipe: recipe);
     } else if (recipe.cardType == RecipeCardType.card2) {

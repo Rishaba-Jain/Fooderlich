@@ -10,14 +10,8 @@ class Card1 extends StatelessWidget {
     required this.recipe,
   }) : super(key: key);
 
-  final String category = 'Editor\'s Choice';
-  final String title = 'The Art of Phulka';
-  final String description = 'Learn to make the perfect Phulka.';
-  final String chef = 'Rishaba Jain';
-
   @override
   Widget build(BuildContext context) {
-    print('card1');
     return Center(
       child: Container(
         child: Stack(

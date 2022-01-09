@@ -1,4 +1,3 @@
-
 import 'dart:convert';
 import 'package:flutter/services.dart';
 import '../models/models.dart';
@@ -26,14 +25,8 @@ class MockFooderlichService {
     //Go through each recipe and convert json to ExploreRecipe object
     if (json['recipes'] != null) {
       final recipes = <ExploreRecipe>[];
-      print('json recipes is not null');
       json['recipes'].forEach((v) {
-        print(v);
-        print('1111111111111111');
-        print(ExploreRecipe.fromJson(v).toString());
         recipes.add(ExploreRecipe.fromJson(v));
-        print('mockservice _getTodayRecipes recipes.isempty');
-        print(recipes.isEmpty);
       });
       return recipes;
     } else {
