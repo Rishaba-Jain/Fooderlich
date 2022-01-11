@@ -1,117 +1,55 @@
-
 {
     "recipes": [
         {
             "id": "rec1",
-            "dishImage": "assets/food_pics/.jpg",
-            "title": "",
+            "dishImage": "assets/food_pics/food_dosa.jpg",
+            "title": "Dosa",
             "duration": "30 mins",
-            "source": "https://pixabay.com/photos/",
+            "source": "https://commons.wikimedia.org/wiki/File:%D7%93%D7%95%D7%A1%D7%94.jpg",
             "information": [
                 "Course: Main Course",
                 "Price: Cheap",
-                "Cuisine: Mediterranian",
-                "Skill Level: Beginner",
-                "Prep Time 5 minutes"
+                "Cuisine: South Indian",
+                "Skill Level: Beginner"
             ]
         },
         {
             "id": "rec2",
-            "dishImage": "assets/food_pics/food_cupcake.jpg",
-            "title": "Chocolate Cup Cake",
+            "dishImage": "assets/food_pics/food_idli.jpg",
+            "title": "Idli",
             "duration": "1 hour",
-            "source": "https://pixabay.com/photos/cupcakes-dessert-frosting-food-690040/",
+            "source": "https://www.pexels.com/photo/delicious-dumplings-with-with-herbs-and-veggies-4331489/?utm_content=attributionCopyText&utm_medium=referral&utm_source=pexels",
             "information": [
-                "Course: Dessert",
-                "Price: Somewhat cheap",
-                "Cuisine: American",
-                "Skill Level: Amateur",
-                "Prep Time 10 minutes"
+                "Course: Main Course",
+                "Price: Cheap",
+                "Cuisine: South Indian",
+                "Skill Level: Amateur"
             ]
         },
         {
             "id": "rec3",
-            "dishImage": "assets/food_pics/food_pancake.jpg",
-            "title": "Rasberry Maple Pancake",
-            "duration": "30 mins",
-            "source": "https://pixabay.com/photos/pancakes-maple-syrup-sweet-food-2291908/",
+            "dishImage": "assets/food_pics/food_khaman_dhokla.jpg",
+            "title": "Khaman Dhokla",
+            "duration": "1 hour",
+            "source": "https://www.freepik.com/free-photo/gujarati-khaman-dhokla-made-using-chana-dal-served-with-green-chutney-selective-focus_19997740.htm#query=dhokla&position=0&from_view=keyword",
             "information": [
                 "Course: Breakfast",
                 "Price: Cheap",
-                "Cuisine: American",
-                "Skill Level: Beginner",
-                "Prep Time 5 minutes"
+                "Cuisine: North Indian",
+                "Skill Level: Beginner"
             ]
         },
         {
             "id": "rec4",
-            "dishImage": "assets/food_pics/.jpg",
-            "title": "",
+            "dishImage": "assets/food_pics/food_medu_vada.jpg",
+            "title": "Medu Vada",
             "duration": "50 mins",
-            "source": "https://pixabay.com/photos/",
+            "source": "https://commons.wikimedia.org/wiki/File:Medu_Vadas.JPG",
             "information": [
-                "Course: Main Course",
-                "Price: Expensive",
-                "Cuisine: Italian",
-                "Skill Level: Beginner",
-                "Prep Time 5 minutes"
-            ]
-        },
-        {
-            "id": "rec5",
-            "dishImage": "assets/food_pics/food_friedrice.jpg",
-            "title": "Thai Fried Rice",
-            "duration": "35 mins",
-            "source": "https://pixabay.com/photos/fried-rice-thai-food-thai-cuisine-3023040/",
-            "information": [
-                "Course: Main Course",
+                "Course: Snacks",
                 "Price: Cheap",
-                "Cuisine: Thai",
-                "Skill Level: Beginner",
-                "Prep Time 5 minutes"
-            ]
-            
-        },
-        {
-            "id": "rec6",
-            "dishImage": "assets/food_pics/food_curry.jpg",
-            "title": "Thai Green Curry",
-            "duration": "1 hour",
-            "source": "https://pixabay.com/photos/green-curry-thai-food-3604721/",
-            "information": [
-                "Course: Main Course",
-                "Price: Medium",
-                "Cuisine: Thai",
-                "Skill Level: Amateur",
-                "Prep Time 10 minutes"
-            ]
-        },
-        {
-            "id": "rec7",
-            "dishImage": "assets/food_pics/.jpg",
-            "title": "",
-            "duration": "1 hour",
-            "source": "https://pixabay.com/photos/",
-            "information": [
-                "Course: Main Course",
-                "Price: Cheap",
-                "Cuisine: Vietnamese",
-                "Skill Level: Hard",
-                "Prep Time 20 minutes"
-            ]
-        },
-        {
-            "id": "rec8",
-            "dishImage": "assets/food_pics/.jpg",
-            "title": "",
-            "duration": "30 min",
-            "source": "https://pixabay.com/photos/",
-            "information": [
-                "Course: Main Course",
-                "Price: Cheap",
-                "Cuisine: American",
-                "Skill Level: Easy",
-                "Prep Time 5 minutes"
+                "Cuisine: Indian",
+                "Skill Level: Advanced"
             ]
         }
     ]

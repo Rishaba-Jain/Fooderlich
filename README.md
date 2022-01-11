@@ -10,3 +10,4 @@ Image Sources:
 - smoothies1.webp - https://www.mykitchentales.in/post/mango-shake-with-a-twist
 - display_picture1.jpg - https://www.istockphoto.com/vector/human-face-avatar-icon-profile-for-social-network-man-vector-illustration-gm1227618803-362135941
 - groceries1.jpg - https://pngtree.com/freebackground/whole-grains-health-and-wellness_1095959.html
+- profile_ pics - https://elements.envato.com/50-user-avatar-icons-YAQ9QQ

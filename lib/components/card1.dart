@@ -16,21 +16,29 @@ class Card1 extends StatelessWidget {
       child: Container(
         child: Stack(
           children: [
-            Text(
-              recipe.subtitle,
-              style: FooderlichTheme.darkTextTheme.bodyText1,
+            // Text(
+            //   recipe.subtitle,
+            //   style: FooderlichTheme.darkTextTheme.bodyText1,
+            // ),
+            Positioned(
+              child: Text(
+                recipe.subtitle,
+                style: FooderlichTheme.darkTextTheme.bodyText1,
+              ),
+              right: 20,
             ),
             Positioned(
               child: Text(
                 recipe.title,
-                style: FooderlichTheme.darkTextTheme.headline5,
+                style: FooderlichTheme.darkTextTheme.headline6,
               ),
               top: 20,
+              right: 20,
             ),
             Positioned(
               child: Text(
                 recipe.message,
-                style: FooderlichTheme.darkTextTheme.bodyText1,
+                style: FooderlichTheme.lightTextTheme.headline3,
               ),
               bottom: 30,
               right: 0,
@@ -38,7 +46,7 @@ class Card1 extends StatelessWidget {
             Positioned(
               child: Text(
                 recipe.authorName,
-                style: FooderlichTheme.darkTextTheme.bodyText1,
+                style: FooderlichTheme.lightTextTheme.headline3,
               ),
               bottom: 10,
               right: 0,

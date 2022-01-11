@@ -43,11 +43,11 @@ class _AuthorCardState extends State<AuthorCard> {
                     children: [
                       Text(
                         widget.authorName,
-                        style: FooderlichTheme.lightTextTheme.headline2,
+                        style: FooderlichTheme.darkTextTheme.headline2,
                       ),
                       Text(
                         widget.title,
-                        style: FooderlichTheme.lightTextTheme.headline3,
+                        style: FooderlichTheme.darkTextTheme.headline3,
                       ),
                     ],
                   ),
@@ -56,7 +56,7 @@ class _AuthorCardState extends State<AuthorCard> {
               IconButton(
                 icon: Icon(_isFavorited ? Icons.favorite: Icons.favorite_border),
                 iconSize: 30,
-                color: _isFavorited ? Colors.red : Colors.black,
+                color: _isFavorited ? Colors.red : Colors.white,
                 onPressed: () {
                   setState(() {
                     _isFavorited = !_isFavorited;
