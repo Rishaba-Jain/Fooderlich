@@ -1,15 +1,22 @@
 import 'package:flutter/material.dart';
-import 'package:fooderlich_rj/screens/grocery_screen.dart';
-import 'package:provider/provider.dart';
-import 'models/tab_manager.dart';
-import 'screens/explore_screen.dart';
-import 'screens/recipes_screen.dart';
+
+import 'explore_screen.dart';
+import 'grocery_screen.dart';
+import 'recipes_screen.dart';
 
 class Home extends StatefulWidget {
-  const Home({Key? key}) : super(key: key);
+  // TODO: Home MaterialPage Helper
+
+  const Home({
+    Key? key,
+    required this.currentTab,
+  }) : super(key: key);
+
+  final int currentTab;
 
   @override
   _HomeState createState() => _HomeState();
+
 }
 
 class _HomeState extends State<Home> {
@@ -21,25 +28,28 @@ class _HomeState extends State<Home> {
 
   @override
   Widget build(BuildContext context) {
-    return Consumer<TabManager>(
-      builder: (context, tabManager, child) {
-        return Scaffold(
+    // TODO: Wrap Consumer for AppstateManager
+
+    return Scaffold(
           appBar: AppBar(
             title: Text(
               'Fooderlich',
               style: Theme.of(context).textTheme.headline6,
             ),
+            actions: [
+              profileButton(),
+            ],
           ),
           body: IndexedStack(
-            index: tabManager.selectedTab,
+            index: widget.currentTab,
             children: pages,
           ),
           bottomNavigationBar: BottomNavigationBar(
             selectedItemColor:
                 Theme.of(context).textSelectionTheme.selectionColor,
-            currentIndex: tabManager.selectedTab,
+            currentIndex: widget.currentTab,
             onTap: (index) {
-              tabManager.goToTab(index);
+              // TODO: Update user's selected tab
             },
             items: const <BottomNavigationBarItem>[
               BottomNavigationBarItem(
@@ -57,7 +67,26 @@ class _HomeState extends State<Home> {
             ],
           ),
         );
-      },
+
+        // TODO: Add closing
+    //   },
+    // );
+  }
+
+  Widget profileButton() {
+    return Padding(
+      padding: const EdgeInsets.only(right: 16.0),
+      child: GestureDetector(
+        child: const CircleAvatar(
+          backgroundColor: Colors.transparent,
+          backgroundImage: AssetImage(
+            'assets/profile_pics/person (5).jpg'
+          ),
+        ),
+        onTap: () {
+          // TODO: home -> profile
+        },
+      ),
     );
   }
 }
