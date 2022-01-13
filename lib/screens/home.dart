@@ -1,11 +1,22 @@
 import 'package:flutter/material.dart';
 
+import 'package:provider/provider.dart';
+import '../models/models.dart';
+
 import 'explore_screen.dart';
 import 'grocery_screen.dart';
 import 'recipes_screen.dart';
 
 class Home extends StatefulWidget {
-  // TODO: Home MaterialPage Helper
+  static MaterialPage page(int currentTab) {
+    return MaterialPage(
+      name: FooderlichPages.home,
+      key: ValueKey(FooderlichPages.home),
+      child: Home(
+        currentTab: currentTab,
+      ),
+    );
+  }
 
   const Home({
     Key? key,
@@ -16,7 +27,6 @@ class Home extends StatefulWidget {
 
   @override
   _HomeState createState() => _HomeState();
-
 }
 
 class _HomeState extends State<Home> {
@@ -28,9 +38,9 @@ class _HomeState extends State<Home> {
 
   @override
   Widget build(BuildContext context) {
-    // TODO: Wrap Consumer for AppstateManager
-
-    return Scaffold(
+    return Consumer<AppStateManager>(
+      builder: (context, appStateManeger, child) {
+        return Scaffold(
           appBar: AppBar(
             title: Text(
               'Fooderlich',
@@ -49,7 +59,8 @@ class _HomeState extends State<Home> {
                 Theme.of(context).textSelectionTheme.selectionColor,
             currentIndex: widget.currentTab,
             onTap: (index) {
-              // TODO: Update user's selected tab
+              Provider.of<AppStateManager>(context, listen: false)
+                  .goToTab(index);
             },
             items: const <BottomNavigationBarItem>[
               BottomNavigationBarItem(
@@ -67,10 +78,8 @@ class _HomeState extends State<Home> {
             ],
           ),
         );
-
-        // TODO: Add closing
-    //   },
-    // );
+      },
+    );
   }
 
   Widget profileButton() {
@@ -79,12 +88,11 @@ class _HomeState extends State<Home> {
       child: GestureDetector(
         child: const CircleAvatar(
           backgroundColor: Colors.transparent,
-          backgroundImage: AssetImage(
-            'assets/profile_pics/person (5).jpg'
-          ),
+          backgroundImage: AssetImage('assets/profile_pics/person (1).png'),
         ),
         onTap: () {
-          // TODO: home -> profile
+          Provider.of<ProfileManager>(context, listen: false)
+              .tapOnProfile(true);
         },
       ),
     );

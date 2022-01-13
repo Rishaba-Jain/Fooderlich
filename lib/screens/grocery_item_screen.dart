@@ -8,15 +8,35 @@ import '../models/models.dart';
 
 class GroceryItemScreen extends StatefulWidget {
   final Function(GroceryItem) onCreate;
-  final Function(GroceryItem) onUpdate;
+  final Function(GroceryItem, int) onUpdate;
   final GroceryItem? originalItem;
+  final int index;
   final bool isUpdating;
+
+  static MaterialPage page({
+    GroceryItem? item,
+    int index = -1,
+    required Function(GroceryItem) onCreate,
+    required Function(GroceryItem, int) onUpdate,
+  }) {
+    return MaterialPage(
+      name: FooderlichPages.groceryItemDetails,
+      key: ValueKey(FooderlichPages.groceryItemDetails),
+      child: GroceryItemScreen(
+        originalItem: item,
+        index: index,
+        onCreate: onCreate,
+        onUpdate: onUpdate,
+      ),
+    );
+  }
 
   const GroceryItemScreen({
     Key? key,
     required this.onCreate,
     required this.onUpdate,
     this.originalItem,
+    this.index = -1,
   })  : isUpdating = (originalItem != null),
         super(key: key);
 
@@ -87,8 +107,11 @@ class _GroceryItemScreenState extends State<GroceryItemScreen> {
                 ),
               );
 
-              if(widget.isUpdating) {
-                widget.onUpdate(groceryItem);
+              if (widget.isUpdating) {
+                widget.onUpdate(
+                  groceryItem,
+                  widget.index,
+                );
               } else {
                 widget.onCreate(groceryItem);
               }
@@ -113,7 +136,7 @@ class _GroceryItemScreenState extends State<GroceryItemScreen> {
             buildColorPicker(context),
             const SizedBox(height: 10.0),
             buildQuantityField(),
-            const SizedBox(height:16.0),
+            const SizedBox(height: 16.0),
             GroceryTile(
               item: GroceryItem(
                 id: 'previewMode',

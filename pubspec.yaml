@@ -13,6 +13,8 @@ dependencies:
   flutter_colorpicker: 0.6.0
   intl: 0.17.0
   uuid: 3.0.4
+  smooth_page_indicator: 1.0.0
+  webview_flutter: 3.0.0
 
 dev_dependencies:
   flutter_test:
@@ -27,3 +29,4 @@ flutter:
     - assets/magazine_pics/
     - assets/sample_data/
     - assets/profile_pics/
+    - assets/fooderlich_assets/
