@@ -24,6 +24,7 @@ class LoginScreen extends StatelessWidget {
   final TextStyle focusedStyle = const TextStyle(color: Colors.green);
   final TextStyle unfocusedStyle = const TextStyle(color: Colors.grey);
 
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Padding(

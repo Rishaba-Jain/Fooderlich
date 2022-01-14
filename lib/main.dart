@@ -6,6 +6,7 @@ import 'package:provider/provider.dart';
 import 'fooderlich_theme.dart';
 import 'models/models.dart';
 import 'navigation/app_router.dart';
+import 'navigation/app_route_parser.dart';
 
 void main() {
   runApp(
@@ -17,7 +18,7 @@ class Fooderlich extends StatefulWidget {
   const Fooderlich({Key? key}) : super(key: key);
 
   @override
-  State<Fooderlich> createState() => _FooderlichState();
+  _FooderlichState createState() => _FooderlichState();
 }
 
 class _FooderlichState extends State<Fooderlich> {
@@ -26,6 +27,7 @@ class _FooderlichState extends State<Fooderlich> {
   final _appStateManager = AppStateManager();
 
   late AppRouter _appRouter;
+  final routeParser = AppRouteParser();
 
   @override
   void initState() {
@@ -60,13 +62,12 @@ class _FooderlichState extends State<Fooderlich> {
           theme = FooderlichTheme.light();
         }
 
-        return MaterialApp(
+        return MaterialApp.router(
           theme: theme,
           title: 'Fooderlich',
-          home: Router(
-            routerDelegate: _appRouter,
-            backButtonDispatcher: RootBackButtonDispatcher(),
-          ),
+          backButtonDispatcher: RootBackButtonDispatcher(),
+          routeInformationParser: routeParser,
+          routerDelegate: _appRouter,
           scrollBehavior: const MaterialScrollBehavior().copyWith(
             dragDevices: {PointerDeviceKind.mouse},
           ),

@@ -39,7 +39,7 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Consumer<AppStateManager>(
-      builder: (context, appStateManeger, child) {
+      builder: (context, appStateManager, child) {
         return Scaffold(
           appBar: AppBar(
             title: Text(

@@ -1,11 +1,12 @@
+import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import '../components/circle_image.dart';
 import '../models/models.dart';
 
 class ProfileScreen extends StatefulWidget {
-  
   static MaterialPage page(User user) {
     return MaterialPage(
       name: FooderlichPages.profilePath,
@@ -22,7 +23,6 @@ class ProfileScreen extends StatefulWidget {
 
   @override
   _ProfileScreenState createState() => _ProfileScreenState();
-
 }
 
 class _ProfileScreenState extends State<ProfileScreen> {
@@ -33,7 +33,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
         leading: IconButton(
             icon: const Icon(Icons.close),
             onPressed: () {
-              Provider.of<ProfileManager>(context, listen: false).tapOnProfile(false);
+              Provider.of<ProfileManager>(context, listen: false)
+                  .tapOnProfile(false);
             }),
       ),
       body: Center(
@@ -57,14 +58,20 @@ class _ProfileScreenState extends State<ProfileScreen> {
         buildDarkModeRow(),
         ListTile(
           title: const Text('View raywenderlich.com'),
-          onTap: () {
-            Provider.of<ProfileManager>(context, listen: false).tapOnRaywenderlich(true);
+          onTap: () async {
+            if (kIsWeb) {
+              await launch('https://www.raywenderlich.com/');
+            } else {
+              Provider.of<ProfileManager>(context, listen: false)
+                  .tapOnRaywenderlich(true);
+            }
           },
         ),
         ListTile(
           title: const Text('Log out'),
           onTap: () {
-            Provider.of<ProfileManager>(context, listen: false).tapOnProfile(false);
+            Provider.of<ProfileManager>(context, listen: false)
+                .tapOnProfile(false);
             Provider.of<AppStateManager>(context, listen: false).logout();
           },
         ),

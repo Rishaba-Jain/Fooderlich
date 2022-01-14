@@ -21,6 +21,7 @@ class RecipesGridView extends StatelessWidget {
       ),
 
       child: GridView.builder(
+        primary: false,
         itemCount: recipes.length,
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
         itemBuilder: (context, index) {

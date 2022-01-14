@@ -17,6 +17,7 @@ class GroceryListScreen extends StatelessWidget {
       padding: const EdgeInsets.all(16.0),
       child: ListView.separated(
         itemCount: groceryItems.length,
+        primary: false,
         itemBuilder: (context, index) {
           final item = groceryItems[index];
           return Dismissible(

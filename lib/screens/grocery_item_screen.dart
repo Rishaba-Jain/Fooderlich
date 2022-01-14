@@ -54,37 +54,6 @@ class _GroceryItemScreenState extends State<GroceryItemScreen> {
   int _currentSliderValue = 0;
 
   @override
-  void initState() {
-    super.initState();
-    final originalItem = widget.originalItem;
-    if (originalItem != null) {
-      _nameController.text = originalItem.name;
-      _name = originalItem.name;
-      _currentSliderValue = originalItem.quantity;
-      _importance = originalItem.importance;
-      _currentColor = originalItem.color;
-      final date = originalItem.date;
-      _timeOfDay = TimeOfDay(
-        hour: date.hour,
-        minute: date.minute,
-      );
-      _dueDate = date;
-    }
-
-    _nameController.addListener(() {
-      setState(() {
-        _name = _nameController.text;
-      });
-    });
-  }
-
-  @override
-  void dispose() {
-    _nameController.dispose();
-    super.dispose();
-  }
-
-  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
@@ -199,35 +168,38 @@ class _GroceryItemScreenState extends State<GroceryItemScreen> {
           spacing: 10.0,
           children: [
             ChoiceChip(
-                selectedColor: Colors.black,
-                selected: _importance == Importance.low,
-                label: const Text(
-                  'low',
-                  style: TextStyle(color: Colors.white),
-                ),
-                onSelected: (selected) {
-                  setState(() => _importance = Importance.low);
-                }),
+              selectedColor: Colors.black,
+              selected: _importance == Importance.low,
+              label: const Text(
+                'low',
+                style: TextStyle(color: Colors.white),
+              ),
+              onSelected: (selected) {
+                setState(() => _importance = Importance.low);
+              },
+            ),
             ChoiceChip(
-                selectedColor: Colors.black,
-                selected: _importance == Importance.medium,
-                label: const Text(
-                  'medium',
-                  style: TextStyle(color: Colors.white),
-                ),
-                onSelected: (selected) {
-                  setState(() => _importance = Importance.medium);
-                }),
+              selectedColor: Colors.black,
+              selected: _importance == Importance.medium,
+              label: const Text(
+                'medium',
+                style: TextStyle(color: Colors.white),
+              ),
+              onSelected: (selected) {
+                setState(() => _importance = Importance.medium);
+              },
+            ),
             ChoiceChip(
-                selectedColor: Colors.black,
-                selected: _importance == Importance.high,
-                label: const Text(
-                  'high',
-                  style: TextStyle(color: Colors.white),
-                ),
-                onSelected: (selected) {
-                  setState(() => _importance = Importance.high);
-                }),
+              selectedColor: Colors.black,
+              selected: _importance == Importance.high,
+              label: const Text(
+                'high',
+                style: TextStyle(color: Colors.white),
+              ),
+              onSelected: (selected) {
+                setState(() => _importance = Importance.high);
+              },
+            ),
           ],
         ),
       ],
@@ -375,14 +347,43 @@ class _GroceryItemScreenState extends State<GroceryItemScreen> {
           divisions: 100,
           label: _currentSliderValue.toInt().toString(),
           onChanged: (double value) {
-            setState(
-              () {
-                _currentSliderValue = value.toInt();
-              },
-            );
+            setState(() {
+              _currentSliderValue = value.toInt();
+            });
           },
         ),
       ],
     );
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    final originalItem = widget.originalItem;
+    if (originalItem != null) {
+      _nameController.text = originalItem.name;
+      _name = originalItem.name;
+      _currentSliderValue = originalItem.quantity;
+      _importance = originalItem.importance;
+      _currentColor = originalItem.color;
+      final date = originalItem.date;
+      _timeOfDay = TimeOfDay(
+        hour: date.hour,
+        minute: date.minute,
+      );
+      _dueDate = date;
+    }
+
+    _nameController.addListener(() {
+      setState(() {
+        _name = _nameController.text;
+      });
+    });
+  }
+
+  @override
+  void dispose() {
+    _nameController.dispose();
+    super.dispose();
   }
 }

@@ -31,6 +31,7 @@ class TodayRecipeListView extends StatelessWidget {
             height: 400,
             color: Colors.transparent,
             child: ListView.separated(
+              primary: false,
               scrollDirection: Axis.horizontal,
               itemCount: recipes.length,
               itemBuilder: (context, index) {

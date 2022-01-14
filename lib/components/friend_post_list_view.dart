@@ -31,7 +31,6 @@ class FriendPostListView extends StatelessWidget {
 
           ListView.separated(
             primary:false,
-
             physics: const NeverScrollableScrollPhysics(),
             shrinkWrap: true,
             scrollDirection: Axis.vertical,
