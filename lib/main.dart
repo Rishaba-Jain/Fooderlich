@@ -69,7 +69,7 @@ class _FooderlichState extends State<Fooderlich> {
           routeInformationParser: routeParser,
           routerDelegate: _appRouter,
           scrollBehavior: const MaterialScrollBehavior().copyWith(
-            dragDevices: {PointerDeviceKind.mouse},
+            dragDevices: {PointerDeviceKind.mouse, PointerDeviceKind.touch},
           ),
         );
       }),

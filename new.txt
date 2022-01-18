@@ -1,3 +1,0 @@
-git ls-files | grep dart | xargs cat | wc -l
-
-13 jan 2022	2628
