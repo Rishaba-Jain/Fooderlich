@@ -4,19 +4,19 @@ version: 1.0.0+1
 
 environment:
   sdk: ">=2.15.1 <3.0.0"
-
+# https://pub.dev/
 dependencies:
   flutter:
     sdk: flutter
-  google_fonts: 2.1.0
-  provider: 6.0.0
-  flutter_colorpicker: 0.6.0
-  intl: 0.17.0
-  uuid: 3.0.4
-  smooth_page_indicator: 1.0.0
-  webview_flutter: 3.0.0
-  url_launcher: 6.0.10
-  shared_preferences: 2.0.7
+  google_fonts: 2.1.0 # include fonts from fonts.google.com
+  provider: 6.0.0 # for state management
+  flutter_colorpicker: 0.6.0 # adorable color pickers out of the box with highly customized widgets
+  intl: 0.17.0 # to deal with internationalized/localized messages, date and number formatting and parsing, bi-directional text, and other internationalization issues
+  uuid: 3.0.4 # UUID Generator and Parser
+  smooth_page_indicator: 1.0.0 # customizable animated page indicator with a set of built-in effects 
+  webview_flutter: 3.0.0 # plugin that provides a WebView widget on Android and iOS
+  url_launcher: 6.0.10 # plugin for launching a URL
+  shared_preferences: 2.0.7 # save the user preferences like search history
 
 dev_dependencies:
   flutter_test:
